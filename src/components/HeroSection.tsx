@@ -74,7 +74,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
         <h1 className="hero-title text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Sewa Truk Profesional untuk
-          <span className="block text-warm-beige">Segala Kebutuhan Anda</span>
+          <span className="block text-warm-beige">Segala Kebutuhan Anda!!</span>
         </h1>
         
         <p className="hero-subtitle text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-90">

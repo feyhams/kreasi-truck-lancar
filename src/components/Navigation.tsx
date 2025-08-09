@@ -1,7 +1,8 @@
+import customLogo from '@/assets/logo.png'; // ganti nama-logo-mu.svg dengan nama filemu
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Phone, Building2 } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,16 +59,14 @@ const Navigation = () => {
         <div className="glass-card rounded-lg px-6 py-4 flex items-center justify-between">
           {/* Professional Logo */}
           <div className="nav-logo flex items-center">
-            <div className="icon-container mr-3">
-              <Building2 className="w-6 h-6" />
-            </div>
-            <div className="hidden md:block">
-              <h2 className="font-bold text-dark-brown text-lg leading-tight">
-                PT Kreasi Empat Bersaudara
-              </h2>
-              <p className="text-muted-foreground text-sm -mt-1">Truck Rental Services</p>
-            </div>
-          </div>
+  <img src={customLogo} alt="Logo Perusahaan" className="w-10 h-10 mr-3" />
+  <div className="hidden md:block">
+    <h2 className="font-bold text-dark-brown text-lg leading-tight">
+      PT Kreasi Empat Bersaudara
+    </h2>
+    <p className="text-muted-foreground text-sm -mt-1">Truck Rental Services</p>
+  </div>
+</div>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-2">

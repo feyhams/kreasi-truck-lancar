@@ -59,7 +59,7 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section className="contact-section py-20 px-6 relative overflow-hidden">
+    <section id="contact" className="contact-section py-20 px-6 relative overflow-hidden">
       {/* Floating glow orbs */}
       <div className="contact-orb glow-orb w-24 h-24 absolute top-20 right-20"></div>
       <div className="contact-orb glow-orb w-16 h-16 absolute bottom-32 left-20"></div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import LoadingScreen from '@/components/LoadingScreen';
+import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FleetSection from '@/components/FleetSection';
 import BookingForm from '@/components/BookingForm';
@@ -21,6 +22,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Navigation />
       <HeroSection />
       <FleetSection />
       <BookingForm />

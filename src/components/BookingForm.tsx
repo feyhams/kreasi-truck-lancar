@@ -37,7 +37,7 @@ const BookingForm = () => {
   }, []);
 
   return (
-    <section className="booking-section py-20 px-6 bg-gradient-card">
+    <section id="booking" className="booking-section py-20 px-6 bg-gradient-card">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-dark-brown mb-6">

@@ -75,7 +75,7 @@ const FleetSection = () => {
   ];
 
   return (
-    <section className="fleet-section py-20 px-6">
+    <section id="fleet" className="fleet-section py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-dark-brown mb-6">

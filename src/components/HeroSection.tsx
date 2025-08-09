@@ -61,59 +61,54 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background image */}
+      {/* Background with professional overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <img
           src={heroImage} 
           alt="Professional truck fleet" 
           className="hero-image w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-brown/80 to-medium-brown/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-brown/90 to-dark-brown/70"></div>
       </div>
 
-      {/* Floating glow orbs */}
-      <div className="hero-orb glow-orb w-32 h-32 absolute top-20 left-20"></div>
-      <div className="hero-orb glow-orb w-24 h-24 absolute top-40 right-32"></div>
-      <div className="hero-orb glow-orb w-20 h-20 absolute bottom-32 left-40"></div>
-
       <div className="relative z-10 container mx-auto px-6 text-center text-white">
-        <h1 className="hero-title text-6xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 className="hero-title text-5xl md:text-6xl font-bold mb-6 leading-tight">
           Sewa Truk Profesional untuk
           <span className="block text-warm-beige">Segala Kebutuhan Anda</span>
         </h1>
         
-        <p className="hero-subtitle text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="hero-subtitle text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-90">
           Armada bersih, terawat, harga transparan, dukungan 24/7 seluruh Indonesia.
           Solusi terpercaya untuk kebutuhan logistik Anda.
         </p>
 
-        <div className="hero-buttons flex flex-col sm:flex-row gap-6 justify-center mb-16">
-          <Button className="btn-hero text-lg px-8 py-4">
+        <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Button className="btn-primary bg-white text-dark-brown hover:bg-white/90 text-lg px-8 py-4">
             Pesan Truk Sekarang
           </Button>
-          <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-dark-brown text-lg px-8 py-4">
+          <Button className="btn-outline border-white text-white hover:bg-white hover:text-dark-brown text-lg px-8 py-4">
             Lihat Armada Kami
           </Button>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          <div className="hero-stats glass-card p-6 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="hero-stats professional-card bg-white/10 backdrop-blur-sm border-white/20 text-center p-4">
             <Users className="w-8 h-8 mx-auto mb-3 text-warm-beige" />
             <div className="text-3xl font-bold mb-1">5,000+</div>
             <div className="text-sm text-white/80">Pelanggan Setia</div>
           </div>
-          <div className="hero-stats glass-card p-6 text-center">
+          <div className="hero-stats professional-card bg-white/10 backdrop-blur-sm border-white/20 text-center p-4">
             <Truck className="w-8 h-8 mx-auto mb-3 text-warm-beige" />
             <div className="text-3xl font-bold mb-1">200+</div>
             <div className="text-sm text-white/80">Armada Truk</div>
           </div>
-          <div className="hero-stats glass-card p-6 text-center">
+          <div className="hero-stats professional-card bg-white/10 backdrop-blur-sm border-white/20 text-center p-4">
             <MapPin className="w-8 h-8 mx-auto mb-3 text-warm-beige" />
             <div className="text-3xl font-bold mb-1">50+</div>
             <div className="text-sm text-white/80">Kota Terjangkau</div>
           </div>
-          <div className="hero-stats glass-card p-6 text-center">
+          <div className="hero-stats professional-card bg-white/10 backdrop-blur-sm border-white/20 text-center p-4">
             <Star className="w-8 h-8 mx-auto mb-3 text-warm-beige" />
             <div className="text-3xl font-bold mb-1">98%</div>
             <div className="text-sm text-white/80">Tingkat Kepuasan</div>

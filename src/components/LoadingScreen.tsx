@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
+import { Building2 } from 'lucide-react';
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -9,57 +10,53 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
-        setTimeout(onComplete, 500);
+        setTimeout(onComplete, 300);
       }
     });
 
-    // Animate loading elements
-    tl.from('.loading-text', {
+    // Simple, professional loading animation
+    tl.from('.loading-logo', {
       opacity: 0,
-      y: 20,
-      duration: 1,
+      scale: 0.8,
+      duration: 0.8,
       ease: 'power2.out'
     })
+    .from('.loading-text', {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: 'power2.out'
+    }, '-=0.3')
     .from('.loading-bar', {
       scaleX: 0,
-      duration: 2,
+      duration: 1.5,
       ease: 'power2.inOut'
-    }, '-=0.5')
+    }, '-=0.2')
     .to('.loading-screen', {
       opacity: 0,
-      duration: 0.8,
+      duration: 0.5,
       ease: 'power2.inOut'
-    });
-
-    // Floating glow orbs
-    gsap.to('.loading-orb', {
-      y: -20,
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-      stagger: 0.5
     });
 
   }, [onComplete]);
 
   return (
-    <div className="loading-screen fixed inset-0 z-50 flex items-center justify-center bg-gradient-hero">
-      {/* Floating glow orbs */}
-      <div className="loading-orb glow-orb w-20 h-20 absolute top-1/4 left-1/4"></div>
-      <div className="loading-orb glow-orb w-16 h-16 absolute top-1/3 right-1/4"></div>
-      <div className="loading-orb glow-orb w-12 h-12 absolute bottom-1/4 left-1/3"></div>
-      
+    <div className="loading-screen fixed inset-0 z-50 flex items-center justify-center bg-background">
       <div className="text-center">
-        <h1 className="loading-text text-4xl font-bold text-white mb-8">
+        <div className="loading-logo icon-container w-20 h-20 mx-auto mb-8">
+          <Building2 className="w-10 h-10" />
+        </div>
+        
+        <h1 className="loading-text text-3xl font-bold text-foreground mb-2">
           PT Kreasi Empat Bersaudara
         </h1>
-        <div className="loading-bar-container w-64 h-1 bg-white/20 rounded-full mx-auto">
-          <div className="loading-bar h-full bg-white rounded-full origin-left"></div>
-        </div>
-        <p className="loading-text text-white/80 mt-4">
-          Memuat pengalaman sewa truk terbaik...
+        <p className="loading-text text-muted-foreground mb-8">
+          Professional Truck Rental Services
         </p>
+        
+        <div className="loading-bar-container w-48 h-1 bg-muted rounded-full mx-auto">
+          <div className="loading-bar h-full bg-primary rounded-full origin-left"></div>
+        </div>
       </div>
     </div>
   );

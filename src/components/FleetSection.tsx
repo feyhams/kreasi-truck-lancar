@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
-import { Fuel, User, MapPin, Package } from 'lucide-react';
+import { Fuel, User, MapPin, Package, Truck, Car, Container } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,21 +56,21 @@ const FleetSection = () => {
       capacity: '1 - 2 Ton',
       dailyRate: 'Rp 350.000',
       features: ['BBM Termasuk', 'Dengan Sopir', 'Jarak 100km/hari'],
-      image: '🚐'
+      icon: Car
     },
     {
       title: 'Truk Sedang',
       capacity: '3 - 5 Ton',
       dailyRate: 'Rp 750.000',
       features: ['BBM Termasuk', 'Dengan Sopir', 'Jarak 150km/hari'],
-      image: '🚚'
+      icon: Truck
     },
     {
       title: 'Truk Besar',
       capacity: '6 - 10 Ton',
       dailyRate: 'Rp 1.200.000',
       features: ['BBM Termasuk', 'Dengan Sopir', 'Jarak 200km/hari'],
-      image: '🚛'
+      icon: Container
     }
   ];
 
@@ -78,8 +78,8 @@ const FleetSection = () => {
     <section id="fleet" className="fleet-section py-20 px-6">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-dark-brown mb-6">
-            Armada Truk Terlengkap
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Armada Truk Profesional
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Pilih jenis truk yang sesuai dengan kebutuhan Anda. 
@@ -89,28 +89,30 @@ const FleetSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {fleetTypes.map((fleet, index) => (
-            <div key={index} className="fleet-card glass-card p-8 text-center hover:shadow-glow transition-all duration-300">
-              <div className="text-6xl mb-6">{fleet.image}</div>
-              <h3 className="text-2xl font-bold text-dark-brown mb-3">{fleet.title}</h3>
-              <div className="text-lg text-medium-brown font-semibold mb-2">
+            <div key={index} className="fleet-card professional-card text-center group">
+              <div className="icon-container w-16 h-16 mx-auto mb-6">
+                <fleet.icon className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3">{fleet.title}</h3>
+              <div className="text-lg text-primary font-semibold mb-2">
                 Kapasitas: {fleet.capacity}
               </div>
-              <div className="text-3xl font-bold text-dark-brown mb-6">
+              <div className="text-3xl font-bold text-foreground mb-6">
                 {fleet.dailyRate}<span className="text-lg font-normal">/hari</span>
               </div>
               
               <div className="space-y-3 mb-8">
                 {fleet.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center justify-center gap-3 text-muted-foreground">
-                    {idx === 0 && <Fuel className="w-5 h-5 text-medium-brown" />}
-                    {idx === 1 && <User className="w-5 h-5 text-medium-brown" />}
-                    {idx === 2 && <MapPin className="w-5 h-5 text-medium-brown" />}
+                    {idx === 0 && <Fuel className="w-5 h-5 text-primary" />}
+                    {idx === 1 && <User className="w-5 h-5 text-primary" />}
+                    {idx === 2 && <MapPin className="w-5 h-5 text-primary" />}
                     <span>{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <Button className="btn-gradient w-full">
+              <Button className="btn-primary w-full">
                 Pesan Sekarang
               </Button>
             </div>

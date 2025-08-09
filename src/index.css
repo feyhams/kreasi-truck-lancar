@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Truck Rental Design System - PT Kreasi Empat Bersaudara Theme
-All colors MUST be HSL.
+/* Professional Truck Rental Design System - PT Kreasi Empat Bersaudara
+Clean, minimal, professional aesthetic. All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Brand Colors from PT Kreasi Empat Bersaudara */
-    --warm-beige: 33 35% 84%;      /* #E6D7C3 */
-    --soft-cream: 33 32% 95%;      /* #F5F0EA */
-    --medium-brown: 33 25% 66%;    /* #C1A88D */
-    --dark-brown: 33 8% 16%;       /* #2D2A26 */
+    /* Professional Brand Colors - More muted and elegant */
+    --warm-beige: 33 25% 80%;      /* More muted beige */
+    --soft-cream: 33 15% 96%;      /* Cleaner cream */
+    --medium-brown: 33 20% 45%;    /* Professional brown */
+    --dark-brown: 33 12% 18%;      /* Deeper, more professional */
     
     /* Semantic tokens */
     --background: var(--soft-cream);
     --foreground: var(--dark-brown);
 
-    --card: 33 32% 98%;
+    --card: 0 0% 100%;
     --card-foreground: var(--dark-brown);
 
-    --popover: 33 32% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: var(--dark-brown);
 
     --primary: var(--medium-brown);
@@ -30,34 +30,34 @@ All colors MUST be HSL.
     --secondary: var(--warm-beige);
     --secondary-foreground: var(--dark-brown);
 
-    --muted: var(--warm-beige);
-    --muted-foreground: 33 15% 45%;
+    --muted: 33 10% 92%;
+    --muted-foreground: 33 8% 45%;
 
     --accent: var(--medium-brown);
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 33 20% 88%;
-    --input: 33 20% 92%;
+    --border: 33 15% 85%;
+    --input: 33 10% 90%;
     --ring: var(--medium-brown);
 
-    /* Premium gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--medium-brown)), hsl(var(--warm-beige)));
+    /* Professional gradients - more subtle */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--medium-brown)), hsl(33 25% 55%));
     --gradient-hero: linear-gradient(135deg, hsl(var(--dark-brown)), hsl(var(--medium-brown)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--soft-cream)), hsl(var(--warm-beige)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--soft-cream)), hsl(var(--warm-beige)));
     
-    /* Glass morphism */
-    --glass-bg: hsla(var(--soft-cream), 0.1);
-    --glass-border: hsla(var(--warm-beige), 0.3);
-    --glass-shadow: 0 8px 32px hsla(var(--dark-brown), 0.1);
+    /* Clean glass effects - more subtle */
+    --glass-bg: hsla(0, 0%, 100%, 0.8);
+    --glass-border: hsla(var(--warm-beige), 0.2);
+    --glass-shadow: 0 4px 20px hsla(var(--dark-brown), 0.08);
     
-    /* Glows and effects */
-    --glow-primary: 0 0 40px hsla(var(--medium-brown), 0.3);
-    --glow-soft: 0 0 20px hsla(var(--warm-beige), 0.4);
+    /* Subtle effects */
+    --shadow-soft: 0 2px 10px hsla(var(--dark-brown), 0.05);
+    --shadow-medium: 0 4px 20px hsla(var(--dark-brown), 0.1);
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -114,41 +114,49 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Glassmorphic elements */
+  /* Professional glass cards */
   .glass-card {
-    @apply bg-opacity-10 backdrop-blur-lg border border-opacity-30 shadow-lg;
     background: var(--glass-bg);
-    border-color: var(--glass-border);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
   }
   
-  /* Gradient buttons */
-  .btn-gradient {
-    background: var(--gradient-primary);
-    @apply text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  /* Professional buttons */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium py-3 px-6 rounded-lg transition-all duration-200;
+    box-shadow: var(--shadow-soft);
   }
   
-  .btn-hero {
-    background: var(--gradient-hero);
-    @apply text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 hover:scale-105;
-    box-shadow: var(--glow-primary);
+  .btn-primary:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
   }
   
-  /* Floating particles */
-  .glow-orb {
-    @apply absolute rounded-full opacity-70;
-    background: radial-gradient(circle, hsla(var(--medium-brown), 0.4), transparent);
-    filter: blur(1px);
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium py-3 px-6 rounded-lg transition-all duration-200;
   }
   
-  /* Loading animations */
+  /* Professional cards */
+  .professional-card {
+    @apply bg-card border border-border rounded-lg p-6 transition-all duration-200;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .professional-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+  }
+  
+  /* Clean animations */
   .fade-in-up {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   
-  .blur-to-clear {
-    filter: blur(10px);
-    opacity: 0;
+  /* Professional icon containers */
+  .icon-container {
+    @apply w-12 h-12 bg-primary text-primary-foreground rounded-lg flex items-center justify-center;
+    box-shadow: var(--shadow-soft);
   }
 }

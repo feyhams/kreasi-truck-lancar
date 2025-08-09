@@ -18,7 +18,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', 'sans-serif'],
+			},
 			colors: {
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'soft-cream': 'hsl(var(--soft-cream))',
+				'medium-brown': 'hsl(var(--medium-brown))',
+				'dark-brown': 'hsl(var(--dark-brown))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,6 +69,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+			},
+			boxShadow: {
+				'glass': 'var(--glass-shadow)',
+				'glow': 'var(--glow-primary)',
+				'glow-soft': 'var(--glow-soft)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

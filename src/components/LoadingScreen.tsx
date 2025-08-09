@@ -1,3 +1,4 @@
+import customLogo from '@/assets/logo.png'; 
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { Building2 } from 'lucide-react';
@@ -43,9 +44,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   return (
     <div className="loading-screen fixed inset-0 z-50 flex items-center justify-center bg-background">
       <div className="text-center">
-        <div className="loading-logo icon-container w-20 h-20 mx-auto mb-8">
-          <Building2 className="w-10 h-10" />
-        </div>
+        <img src={customLogo} alt="Logo Perusahaan" className="w-22 h-22 mx-auto mb-8" />
         
         <h1 className="loading-text text-3xl font-bold text-foreground mb-2">
           PT Kreasi Empat Bersaudara
